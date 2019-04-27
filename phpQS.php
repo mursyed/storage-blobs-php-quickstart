@@ -46,7 +46,7 @@ $connectionString = "DefaultEndpointsProtocol=https;AccountName=storesubmission2
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 
-$fileToUpload = "HelloWorld.txt";
+$fileToUpload = "logo_TPQ_istiqomah_220518.png";
 
 if (!isset($_GET["Cleanup"])) {
     // Create container options object.
@@ -94,7 +94,7 @@ if (!isset($_GET["Cleanup"])) {
 
         // List blobs.
         $listBlobsOptions = new ListBlobsOptions();
-        $listBlobsOptions->setPrefix("HelloWorld");
+        $listBlobsOptions->setPrefix("logo_TPQ_istiqomah_220518");
 
         echo "These are the blobs present in the container: ";
 
