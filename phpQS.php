@@ -41,7 +41,7 @@ use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=".getenv('mursit').";AccountKey=".getenv('ZmkqKjLeKR6jJqbH3jp/4MeBM14FzbaJylVTACsUNF+81Ah8QZByyV+9N2Y2PkONol/i1OKcWZPjqCYksmTdZA==');
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=".getenv('storesubmission2').";AccountKey=".getenv('xO5Ad7inkrlw2jgkYTw5vxoQUKMQcC9f2dD0D4U7sWZI42bYgek9mwpFYC6FP3mUCGSAZdgwHNpvHNsClyX+LA==');
 
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
