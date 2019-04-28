@@ -107,11 +107,11 @@ if (!isset($_GET["Cleanup"])) {
             $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
             foreach ($result->getBlobs() as $blob)
             {
-                // echo $blob->getName().": <img src='".$blob->getUrl()."'/> <br />";
-                 /*echo $blob->getName()
-                    .": <a href='<?=$blob->getUrl()?>
-                    ."' target='_blank'>logo_TPQ_istiqomah_220518</a> <br/>";*/
-                echo $blob->getName().": ".$blob->getUrl()."<br />";
+                  echo $blob->getName().": <img src='".$blob->getUrl()."'/> <br />";
+                  echo 
+                     ": <a href='<?=$blob->getUrl()?>
+                    ."' target='_blank'>".$blob->getName()."</a> <br/>";
+//                echo $blob->getName().": ".$blob->getUrl()."<br />";
             }
         
             $listBlobsOptions->setContinuationToken($result->getContinuationToken());
@@ -130,7 +130,7 @@ if (!isset($_GET["Cleanup"])) {
         // http://msdn.microsoft.com/library/azure/dd179439.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
-        echo $code.": ".$error_message."<br />";
+       // echo $code.": ".$error_message."<br />";
     }
     catch(InvalidArgumentTypeException $e){
         // Handle exception based on error codes and messages.
@@ -138,7 +138,7 @@ if (!isset($_GET["Cleanup"])) {
         // http://msdn.microsoft.com/library/azure/dd179439.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
-        echo $code.": ".$error_message."<br />";
+       // echo $code.": ".$error_message."<br />";
     }
 } 
 else 
