@@ -79,17 +79,9 @@ if (!isset($_GET["Cleanup"])) {
         $blobClient->createContainer($containerName, $createContainerOptions);
 
         // Getting local file so that we can upload it to Azure
-      //  $myfile = fopen($fileToUpload, "w") or die("Unable to open file!");
-      //  fclose($myfile);
-        $ch = curl_init("http://wpsites.net/wp-content/uploads/2012/05/Internal-Link-Shortcode-Lookup.png");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //Return the transfer so it can be saved to a variable
-        $result = curl_exec($ch);  //Save the transfer to a variable
-        if($result === FALSE){//curl_exec will return false on failure even with returntransfer on
-            die("Unable to dowload file to azure!");
-        }
-        $fp = fopen("name.jpg", 'w'); //Create the empty image. Extension does matter.
-        fwrite($fp, $result); //Write said contents to the above created file
-        fclose($fp);  //Properly close the file
+        $myfile = fopen($fileToUpload, "w") or die("Unable to open file!");
+        fclose($myfile);
+       
         
         # Upload file as a block blob
         echo "Uploading BlockBlob: ".PHP_EOL;
