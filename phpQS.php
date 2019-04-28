@@ -103,6 +103,7 @@ if (!isset($_GET["Cleanup"])) {
             foreach ($result->getBlobs() as $blob)
             {
                   echo $blob->getName().": <img src='".$blob->getUrl()."'/> <br />";
+                  echo $blob->getUrl()."<br/>";
               
             }
         
