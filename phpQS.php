@@ -107,7 +107,7 @@ if (!isset($_GET["Cleanup"])) {
                  /*echo $blob->getName()
                     .": <a href='<?=$blob->getUrl()?>
                     ."' target='_blank'>logo_TPQ_istiqomah_220518</a> <br/>";*/
-                echo $blob->getName().": ".$blob->getUrl()."<br />";FYT5
+                echo $blob->getName().": ".$blob->getUrl()."<br />";
             }
         
             $listBlobsOptions->setContinuationToken($result->getContinuationToken());
