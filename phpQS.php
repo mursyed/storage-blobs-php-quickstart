@@ -1,8 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 /**----------------------------------------------------------------------------------
 * Microsoft Developer & Platform Evangelism
 *
@@ -85,7 +81,6 @@ if (!isset($_GET["Cleanup"])) {
         // Getting local file so that we can upload it to Azure
         $myfile = fopen($fileToUpload, "r") or die("Unable to open file!");
         fclose($myfile);
-       
         
         # Upload file as a block blob
         echo "Uploading BlockBlob: ".PHP_EOL;
@@ -108,10 +103,6 @@ if (!isset($_GET["Cleanup"])) {
             foreach ($result->getBlobs() as $blob)
             {
                   echo $blob->getName().": <img src='".$blob->getUrl()."'/> <br />";
-                  echo 
-                     ": <a href='<?=$blob->getUrl()?>
-                    ."' target='_blank'>".$blob->getName()."</a> <br/>";
-//                echo $blob->getName().": ".$blob->getUrl()."<br />";
             }
         
             $listBlobsOptions->setContinuationToken($result->getContinuationToken());
@@ -130,7 +121,7 @@ if (!isset($_GET["Cleanup"])) {
         // http://msdn.microsoft.com/library/azure/dd179439.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
-       // echo $code.": ".$error_message."<br />";
+        echo $code.": ".$error_message."<br />";
     }
     catch(InvalidArgumentTypeException $e){
         // Handle exception based on error codes and messages.
@@ -138,7 +129,7 @@ if (!isset($_GET["Cleanup"])) {
         // http://msdn.microsoft.com/library/azure/dd179439.aspx
         $code = $e->getCode();
         $error_message = $e->getMessage();
-       // echo $code.": ".$error_message."<br />";
+        echo $code.": ".$error_message."<br />";
     }
 } 
 else 
