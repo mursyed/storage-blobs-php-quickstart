@@ -103,11 +103,10 @@ if (!isset($_GET["Cleanup"])) {
             $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
             foreach ($result->getBlobs() as $blob)
             {
-                // echo $blob->getName().": <img src='".$blob->getUrl()."'/> <br />";
-              /*  echo $blob->getName()
-                    .": <a href='"
-                    .$blob->getUrl()
-                    ."' target='_blank'>logo_TPQ_istiqomah_220518</a> <br/>"; */
+                 echo $blob->getName().": <img src='".$blob->getUrl()."'/> <br />";
+                 echo $blob->getName()
+                    .": <a href='<?=$blob->getUrl()?>
+                    ."' target='_blank'>logo_TPQ_istiqomah_220518</a> <br/>";
             }
         
             $listBlobsOptions->setContinuationToken($result->getContinuationToken());
