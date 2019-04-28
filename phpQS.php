@@ -103,9 +103,7 @@ if (!isset($_GET["Cleanup"])) {
             foreach ($result->getBlobs() as $blob)
             {
                   echo $blob->getName().": <img src='".$blob->getUrl()."'/> <br />";
-                 echo 
-                     ": <a href='<?=$blob->getUrl()?>
-                    ."' target='_blank'>".$blob->getName()."</a> <br/>";
+              
             }
         
             $listBlobsOptions->setContinuationToken($result->getContinuationToken());
