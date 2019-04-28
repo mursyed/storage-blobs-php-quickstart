@@ -102,7 +102,7 @@ if (!isset($_GET["Cleanup"])) {
             $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
             foreach ($result->getBlobs() as $blob)
             {
-                  echo $blob->getName().": <img src='".$blob->getUrl()."' width=216 height=216/> <br />";
+                  echo $blob->getName().": <img src='".$blob->getUrl()."' style='width=216px; height=216px'/> <br />";
                   echo $blob->getUrl()."<br/>";
               
             }
